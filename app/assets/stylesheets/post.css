@@ -1,0 +1,62 @@
+.post-container{
+    background-color: #fff;
+    border:1px solid ;  
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.post-link{
+    position: absolute;
+    width : 100%;
+    height: 100%;
+top:0;
+left: 0;
+z-index: 4;
+opacity: 0;
+background-color: rgba(0,0,0,0.1);
+}
+.post-link:hover{
+opacity: 0.3;
+}
+
+
+nav {
+    display: flex; /* Enable flexbox for the navbar */
+    justify-content: flex-end; /* Align navbar items to the right */
+    width: 100%; /* Stretch navbar to full width */
+  }
+
+  .navbar-dark {
+    background-color: #212529; /* Dark background */
+    border-color: #343a40; /* Border for a slight separation */
+    padding: 0.5rem 1rem; /* Reduced padding */
+  }
+  
+  
+  .navbar-dark .navbar-brand,
+  .navbar-dark .nav-link,
+  .navbar-dark .dropdown-item {
+    color: #fff; /* White text for readability */
+  }
+  
+  .navbar-dark .dropdown-menu {
+    background-color: #212529; /* Dark background for the dropdown menu */
+  }
+  
+  .navbar-dark .dropdown-item:hover,
+  .navbar-dark .nav-link:hover {
+    color: #e9ecef; /* Lighten text on hover for feedback */
+  }
+  
+  .navbar-dark .btn-outline-light { /* Light outline for the search button */
+    color: #fff; /* White text for the search button */
+    border-color: #fff; /* White border for the search button */
+  }
+  
+  .navbar-dark .disabled {
+    opacity: 0.5; /* Reduce opacity for disabled link */
+  }
+  
+  

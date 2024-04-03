@@ -1,0 +1,51 @@
+<style>.simple-calendar {
+  border: 1px solid #333; /* Dark solid border for the entire calendar */
+
+  .day {
+    border: 1px solid #222; /* Dark solid border for each day */
+    padding: 5px; /* Add some padding inside each day */
+  }
+
+  /* Add dark solid borders to specific weekdays if needed (optional) */
+  .wday-0,
+  .wday-1,
+  .wday-2,
+  .wday-3,
+  .wday-4,
+  .wday-5,
+  .wday-6 {
+    border-left: 1px solid #222; /* Dark solid border for weekdays */
+  }
+
+  .today {
+    border: 2px solid #111; /* Thicker dark solid border for today's date */
+  }
+
+  /* Optional borders for event states */
+  .has-events {
+    border: 1px solid #666; /* Dark solid border for days with events */
+  }
+}
+
+</style>
+<h1 style="text-align:center">Calendar</h1>
+
+<%= link_to "Events Details", event_managements_path, class:"btn btn-outline-info btn-lg", style:"margin-left:89%; margin-bottom:10px;" %>
+<%= link_to " New Event", new_event_management_path, class:"btn btn-outline-info btn-lg", style:"margin-left:89%; margin-bottom:10px;" %>
+<%= month_calendar(events: @event_management)do |date, event_management|%>
+<div class="day" > 
+   <%= date %></div>
+<% event_management.each do |event_management|%>
+<div class="card-header">
+<div class="card-title">
+<strong>
+<p style="color:darkblue"> 
+<%= link_to event_management.title, event_management, class:"nav-link active" %>
+</strong>
+</p>
+</div>
+</div>
+
+</div>
+<%end%>
+<%end%>

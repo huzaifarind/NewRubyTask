@@ -1,0 +1,57 @@
+<div class="col-xl-12 col-md-6 col-sm-8 col-12" style="margin:auto; background-color:#white; border-radius:6px; padding:16px;">
+<%= form_with(model: post) do |form| %>
+
+<div class="container">  <div class="row justify-content-center"> <div class="col-md-6">  <div class="form-group">
+<% invalid = post.errors.include?(:title)%>
+    <strong>      <%= form.label :title, style: "display: block" %> </strong>
+          <%= form.text_field :title, class: "form-control" %>
+          <% if invalid%>
+<p style="color:red;"><%=post.errors.full_messages_for(:title).join(" ,")%></p>
+<%end%>
+        </div>
+
+        <div class="form-group">
+        
+          <%= form.text_field :user_id, type:"hidden" , value: current_user.id%>
+
+        </div>
+
+
+        <div class="form-group">
+        <% invalid = post.errors.include?(:description)%>
+        <strong>      <%= form.label :description, style: "display: block" %> </strong>
+          <%= form.text_field :description, class: "form-control" %>
+          <% if invalid%>
+<p style="color:red;"><%=post.errors.full_messages_for(:description).join(" ,")%></p>
+<%end%>
+        </div>
+
+
+        <div class="form-group">
+            <% invalid = post.errors.include?(:keywords)%>
+        <strong>      <%= form.label :keywords, style: "display: block" %> </strong>
+          <%= form.text_field :keywords, class: "form-control" %>
+          <% if invalid%>
+<p style="color:red;"><%=post.errors.full_messages_for(:keywords).join(" ,")%></p>
+<%end%>
+        </div>
+
+
+<div class="form-group">
+            <% invalid = post.errors.include?(:images)%>
+        <strong>      <%= form.label :images, style: "display: block" %> </strong>
+          <%= form.file_field :images, multiple:true, class:"form-control", type:"file" %>
+          <% if invalid%>
+<p style="color:red;"><%=post.errors.full_messages_for(:images).join(" ,")%></p>
+<%end%>
+    </div>
+
+
+        <div class="form-group col-6" style="margin-top:10px;">
+          <%= form.submit "Create Post", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="mb-3">New comment</h1>
+
+      <%= render "form", comment: @comment %>  <br>
+
+      <div class="d-flex justify-content-end mt-3">
+        <%= link_to "Back to comments", comments_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>

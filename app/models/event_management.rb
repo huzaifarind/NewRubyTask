@@ -1,0 +1,2 @@
+class EventManagement < ApplicationRecord
+end
